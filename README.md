@@ -2,11 +2,21 @@
 Design and implementation of music recommendation algorithms
 
 ## Dataset：Million Song Dataset(MSD)
-train_triplets.txt为MSD Taste Profile subset数据集，用于协同过滤推荐算法；
-mxm_dataset_train.txt和mxm_dataset_test.txt为MSD musiXmatch dataset数据集，用于基于歌词推荐算法；
-lastfm_train和lastfm_test文件夹包含MSD Last.fm dataset数据集，用于基于标签的推荐算法；
-msd_tagtraum_cd1.cls和msd_tagtraum_cd2.cls为MSD tagtraum genre annotations数据集，包含genre信息；
-unique_tracks.txt包含MSD trackID和Echo Nest songID的对应关系以及歌曲名信息和艺术家信息。
+
+- train_triplets.txt
+MSD Taste Profile subset数据集，用于协同过滤推荐算法
+
+- mxm_dataset_train.txt和mxm_dataset_test.txt
+MSD musiXmatch dataset数据集，用于基于歌词推荐算法
+
+- lastfm_train和lastfm_test
+包含MSD Last.fm dataset数据集，用于基于标签的推荐算法
+
+- msd_tagtraum_cd1.cls和msd_tagtraum_cd2.cls
+MSD tagtraum genre annotations数据集，包含genre信息
+
+- unique_tracks.txt
+包含MSD trackID和Echo Nest songID的对应关系以及歌曲名信息和艺术家信息。
 
 construct_train_test_dataset.py:
 过滤user_songs数据库表中每个用户听过的歌曲（只包含sample tracks的那10000首），将信息重新存入user_songs_train表中，并且以1：1的比例将user_songs_train分成user_songs_test_visible和user_songs_test_hidden数据库表。user_songs_test_visible用于给用户进行推荐，user_songs_test_hidden用于音乐推荐算法评测指标的计算。
